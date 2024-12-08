@@ -1,0 +1,180 @@
+/* Overall Layout */
+.cities-page {
+  display: flex;
+}
+
+/* Left Sidebar */
+.left-sidebar {
+  width: 20%;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+/* Hide Middle and Right Sections */
+.hidden {
+  display: none;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links li {
+  cursor: pointer;
+}
+
+.nav-links li:hover {
+  text-decoration: underline;
+}
+
+/* Middle Section for Selected Cities or Favorite Cities */
+.middle-section {
+  width: 40%;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+}
+
+.middle-section .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+/* City List */
+.city-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  flex-grow: 1;
+  height: calc(100vh - 120px);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.add-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: #218838;
+}
+/* City List */
+.city-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  height: calc(100vh - 120px);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.city-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.city-item.active {
+  background-color: #e0e0e0;
+}
+
+.city-item:hover {
+  background-color: #f0f0f0}
+
+.remove-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  background-color: #c0392b;
+}
+
+/* Right Section */
+.right-section {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.city-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.favorite-button {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.favorite-button.active {
+  color: darkred;
+}
+.header {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  margin-bottom: 10px; 
+}
+
+/* Placeholder */
+.placeholder {
+  font-size: 16px;
+  color: #888;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.favorite-cities {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.city-card {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.city-card h3 {
+  margin: 0 0 10px;
+}
+
+.favorite-button {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.favorite-button.active {
+  color: darkred;
+}
+

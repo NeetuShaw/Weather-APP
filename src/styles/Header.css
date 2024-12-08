@@ -1,0 +1,14 @@
+.app-header {
+    display: flex;
+    justify-content: center;  /* Centers content horizontally */
+    align-items: center;      /* Centers content vertically if the header height is large */
+    height: 70px;            /* Set a height for the header if needed */
+    background-color: #e5e5e5; /* Optional background color */
+  }
+  
+  .app-header h1 {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;       /* Ensures text is centered */
+  }
+  

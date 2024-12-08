@@ -1,0 +1,105 @@
+.cities-page {
+  display: flex;
+  height: 90vh;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 30px 10px;
+  height: 50px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid rgb(158, 155, 155);
+
+}
+
+.nav-links li:hover {
+  text-decoration: underline;
+}
+
+/* Main Layout for Home Page */
+.home-page {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #f4f7fa;
+}
+
+.favorite-cities-header {
+  display: flex;
+  justify-content: space-between;  /* Space between heading and button */
+  align-items: center;             /* Align items vertically */
+  margin-bottom: 20px;             /* Spacing below the header */
+}
+.add-new-city-button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.add-new-city-button:hover {
+  background-color: #218838;
+}
+
+.favorite-cities-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff;
+   border-radius: 8px;
+  padding-top: 60px;   
+  overflow-y: auto;            
+
+}
+/* Favorite Cities List */
+.favorite-city-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  padding-top: 0;  
+}
+
+/* Individual City Item */
+.favorite-city-item {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+   position: relative;
+}
+
+.favorite-city-item h3 {
+  margin: 0 0 10px;
+  text-align: left;
+}
+
+.favorite-city-item h3 {
+  margin: 0 0 10px;
+  text-align: left;
+}
+ 
+/* Favorite Icon */
+.favorite-icon {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: red;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.favorite-icon:hover {
+  color: rgb(172, 24, 24);              
+}
