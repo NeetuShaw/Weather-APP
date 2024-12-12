@@ -1,14 +1,18 @@
 /* Overall Layout */
 .cities-page {
   display: flex;
+  height: 90.4vh;
 }
 
 /* Left Sidebar */
 .left-sidebar {
   width: 20%;
-  background-color: #f4f4f4;
+  background-color: #bdc0c3;
   padding: 20px;
   border-right: 1px solid #ddd;
+}
+.left-sidebar h3{
+ font-size: 25px;
 }
 /* Hide Middle and Right Sections */
 .hidden {
