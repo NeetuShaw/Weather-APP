@@ -19,48 +19,53 @@ const CityModal: React.FC<CityModalProps> = ({ onClose }) => {
   const [error, setError] = useState(false);
   const [noResults, setNoResults] = useState(false);
 
-  useEffect(() => {
-    const fetchCities = async () => {
-      if (searchTerm.trim().length < 4) {
-        setCityList([]);
+useEffect(() => {
+    const delayDebounce = setTimeout(() => {
+      const fetchCities = async () => {
+        if (searchTerm.trim().length < 3) {
+          setCityList([]);
+          setNoResults(false);
+          return;
+        }
+  
+        setLoading(true);
+        setError(false);
         setNoResults(false);
-        return;
-      }
-
-      setLoading(true);
-      setError(false);
-      setNoResults(false);
-
-      try {
-        const response = await axios.get(
-          `https://wft-geo-db.p.rapidapi.com/v1/geo/cities`,
-          {
+  
+        try {
+          const response = await axios.get(
+            'https://wft-geo-db.p.rapidapi.com/v1/geo/cities',
+            {
             headers: {
-              'X-RapidAPI-Key': '98282aeda9msh35539d11de82195p1405cajsn324fef1ba554', // Your API Key
-              'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com',
+              'X-RapidAPI-Key': 'daf271f92bmshf54f93d5ceb4d57p172b23jsn5d2147f0ed1a', // Load API key from .env
+              'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com', // Load API host from .env
             },
             params: {
               namePrefix: searchTerm,
-              limit: 20,
+              limit: 10,
             },
           }
         );
+
         const cities = response.data.data.map((city: any) => city.city);
         if (cities.length === 0) {
-          setNoResults(true); // No cities found
+          setNoResults(true);
         } else {
           setCityList(cities);
         }
       } catch (err) {
         console.error('Error fetching cities:', err);
-        setError(true); // Network or API error
+        setError(true);
       } finally {
         setLoading(false);
       }
     };
 
     fetchCities();
-  }, [searchTerm]);
+  }, 500);
+
+  return () => clearTimeout(delayDebounce);
+}, [searchTerm]);
 
   const filteredCities = cityList.filter(
     (city) => !selectedCities.includes(city) // Prevent duplicates
